@@ -443,7 +443,9 @@ module.exports = function (list) {
 
     this.filtered = false; // Show if list.filtered == true and this.filtered == true
 
-    this.alwaysVisible = false;
+    if (element !== undefined) {
+      this.alwaysVisible = item.elm.getAttribute('data-always-visible');
+    }
 
     var init = function init(initValues, element, notCreate) {
       if (element === undefined) {
@@ -454,7 +456,6 @@ module.exports = function (list) {
         }
       } else {
         item.elm = element;
-        this.alwaysVisible = item.elm.getAttribute('data-always-visible');
         var values = list.templater.get(item, initValues);
         item.values(values);
       }
