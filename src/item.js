@@ -6,6 +6,7 @@ module.exports = function (list) {
 
     this.found = false // Show if list.searched == true and this.found == true
     this.filtered = false // Show if list.filtered == true and this.filtered == true
+    this.alwaysVisible = element.getAttribute('data-always-visible')
 
     var init = function (initValues, element, notCreate) {
       if (element === undefined) {
@@ -44,6 +45,7 @@ module.exports = function (list) {
 
     this.matching = function () {
       return (
+        item.alwaysVisible ||
         (list.filtered && list.searched && item.found && item.filtered) ||
         (list.filtered && !list.searched && item.filtered) ||
         (!list.filtered && list.searched && item.found) ||
