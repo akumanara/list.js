@@ -444,7 +444,7 @@ module.exports = function (list) {
     this.filtered = false; // Show if list.filtered == true and this.filtered == true
 
     if (element !== undefined) {
-      this.alwaysVisible = item.elm.getAttribute('data-always-visible');
+      this.alwaysVisible = element.getAttribute('data-always-visible');
     }
 
     var init = function init(initValues, element, notCreate) {

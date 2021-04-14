@@ -7,7 +7,7 @@ module.exports = function (list) {
     this.found = false // Show if list.searched == true and this.found == true
     this.filtered = false // Show if list.filtered == true and this.filtered == true
     if (element !== undefined) {
-      this.alwaysVisible = item.elm.getAttribute('data-always-visible')
+      this.alwaysVisible = element.getAttribute('data-always-visible')
     }
 
     var init = function (initValues, element, notCreate) {
