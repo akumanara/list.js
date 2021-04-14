@@ -6,7 +6,7 @@ module.exports = function (list) {
 
     this.found = false // Show if list.searched == true and this.found == true
     this.filtered = false // Show if list.filtered == true and this.filtered == true
-    this.alwaysVisible = element.getAttribute('data-always-visible')
+    this.alwaysVisible = false
 
     var init = function (initValues, element, notCreate) {
       if (element === undefined) {
@@ -17,6 +17,7 @@ module.exports = function (list) {
         }
       } else {
         item.elm = element
+        this.alwaysVisible = item.elm.getAttribute('data-always-visible')
         var values = list.templater.get(item, initValues)
         item.values(values)
       }
