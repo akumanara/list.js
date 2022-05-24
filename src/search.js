@@ -28,7 +28,7 @@ module.exports = function (list) {
     },
     setSearchString: function (s) {
       s = list.utils.toString(s).toLowerCase().latinize()
-      s = s.replace(/[-[\]{}()*+?.,\\^$|#]/g, '\\$&') // Escape regular expression characters
+      // s = s.replace(/[-[\]{}()*+?.,\\^$|#]/g, '\\$&') // Escape regular expression characters
       searchString = s
     },
     toArray: function (values) {
